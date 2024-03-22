@@ -12,11 +12,11 @@ public class Contact {
     private Long id;
     @Column(name = "firstname", length = 30, nullable = false)
     private String firstname;
-    @Column(name = "lastname", length = 30, nullable = false)
+    @Column(name = "lastname", length = 30, nullable = true)
     private String lastname;
-    @Column(name = "phone_number", length = 20, nullable = false)
+    @Column(name = "phone_number", length = 20, nullable = true, unique = true)
     private String phoneNumber;
-    @Column(name = "email", length = 100, nullable = false, unique = true)
+    @Column(name = "email", length = 100, nullable = true)
     private String email;
 
     public Contact() {

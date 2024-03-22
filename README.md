@@ -2,10 +2,10 @@
 Faire une API REST de gestion de contact
 
 **Fonctionnalités :**
-- Récupérer tous les contact
+- Récupérer tous les contacts ✅
 - Récupérer un contact par son email ou numéro de téléphone
-- Ajouter un contact
+- Ajouter un contact ✅
 - Supprimer un contact (par ID)
 - Rechercher un ou plusieurs contact par le nom et prénom 
 
-:warning:  RESPECTER LES STATUS HTTP :warning: 
+:warning:  RESPECTER LES STATUS HTTP :warning:
