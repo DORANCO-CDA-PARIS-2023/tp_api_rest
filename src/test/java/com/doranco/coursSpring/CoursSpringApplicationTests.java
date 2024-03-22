@@ -1,10 +1,10 @@
-package com.doranco.TPAPIREST;
+package com.doranco.coursSpring;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TpApiRestApplicationTests {
+class CoursSpringApplicationTests {
 
 	@Test
 	void contextLoads() {
