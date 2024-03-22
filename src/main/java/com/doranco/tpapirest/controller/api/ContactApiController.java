@@ -19,7 +19,7 @@ public class ContactApiController {
         this.contactRepository = contactRepository;
     }
 
-    @GetMapping("/contact")
+    @GetMapping("/contacts")
     public ResponseEntity<Payload> getAllContact() {
         Payload payload = new Payload();
         List<Contact> contacts = contactRepository.findAll();
@@ -82,6 +82,32 @@ public class ContactApiController {
                 "Contact id %s deleted.",
                 id
         ));
+        return new ResponseEntity<>(payload, HttpStatus.OK);
+    }
+
+    @GetMapping("/contacts/search")
+    public ResponseEntity<Payload> getByFullname(@RequestParam(name = "firstname") String firstname,
+                                                 @RequestParam(name = "lastname") String lastname) {
+        Payload payload = new Payload();
+
+        List<Contact> contacts = contactRepository.findByFirstnameContainingIgnoreCaseAndLastnameContainingIgnoreCase(firstname, lastname);
+        if (contacts.isEmpty()) {
+            payload.setMessage(String.format(
+                    "There are no contact with fullname %s %s.",
+                    lastname,
+                    firstname
+            ));
+            return new ResponseEntity<>(payload, HttpStatus.NO_CONTENT);
+        }
+
+        payload.setMessage(String.format(
+                "%d %s found with fullname %s %s.",
+                contacts.size(),
+                contacts.size() > 1 ? "contacts" : "contact",
+                lastname,
+                firstname
+        ));
+        payload.setContent(contacts);
         return new ResponseEntity<>(payload, HttpStatus.OK);
     }
 
