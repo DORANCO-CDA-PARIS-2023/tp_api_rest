@@ -1,5 +1,6 @@
 # TP API REST:
-Faire une API REST de gestion de contacte 
+Faire une API REST de gestion de contact
+
 **Fonctionnalités :**
 - Récupérer tous les contact
 - Récupérer un contact par son email ou numéro de téléphone
