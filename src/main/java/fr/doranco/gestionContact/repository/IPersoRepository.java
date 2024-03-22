@@ -15,7 +15,9 @@ public interface IPersoRepository extends JpaRepository<Perso, Integer> {
 	public Perso findByEmailOrPhone(String emailOrPhone);
 	
 	
-
-//	public List<Perso> findAllByNomOrPrenomStartWith(String nomOrPrenomStartWith);
+	
+	// findAllByNomOrPrenomStartWith
+	@Query("SELECT p FROM Perso p WHERE p.firstName LIKE :nomOrPrenomStartWith% OR p.lastName LIKE :nomOrPrenomStartWith%")
+	public List<Perso> findAllByNomOrPrenomStartWith(String nomOrPrenomStartWith);
 
 }

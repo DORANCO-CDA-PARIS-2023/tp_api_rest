@@ -50,7 +50,7 @@ public class PersoControllerAPI {
 	}
 	
 	
-	/*
+
 	@GetMapping("/{nomOrPrenomStartWith}")
 	public ResponseEntity<Payload> getByNomOrPrenomStartWith(String nomOrPrenomStartWith) {
 		List<Perso> persos = persoRepository.findAllByNomOrPrenomStartWith(nomOrPrenomStartWith);
@@ -62,7 +62,7 @@ public class PersoControllerAPI {
 		payload.setMessage("Personne trouvée :");
 		payload.setData(persos);
 		return new ResponseEntity<>(payload, HttpStatus.OK);
-	} */
+	} 
 	
 	@PostMapping("/create")
 	public ResponseEntity<Payload> createContact(@RequestBody Perso perso) {
