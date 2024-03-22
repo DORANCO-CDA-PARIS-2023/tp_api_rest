@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface ContactRepository extends JpaRepository<Contact, Long> {
 
     Optional<Contact> findByPhoneNumber(String phoneNumber);
+    Optional<Contact> findByEmailContainingIgnoreCase(String email);
     List<Contact> findByFirstnameContainingIgnoreCaseAndLastnameContainingIgnoreCase(String firstname, String lastname);
 
 }

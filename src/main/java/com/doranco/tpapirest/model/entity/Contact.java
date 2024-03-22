@@ -16,7 +16,7 @@ public class Contact {
     private String lastname;
     @Column(name = "phone_number", length = 20, nullable = true, unique = true)
     private String phoneNumber;
-    @Column(name = "email", length = 100, nullable = true)
+    @Column(name = "email", length = 100, nullable = true, unique = true)
     private String email;
 
     public Contact() {
