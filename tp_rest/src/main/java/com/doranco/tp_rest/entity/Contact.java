@@ -1,25 +1,26 @@
-package com.doranco.entity;
+package com.doranco.tp_rest.entity;
+
 
 public class Contact {
 	
 	private String firstname;
 	private String lastname;
-	private String number;
 	private String email;
-	private String adresse;
+	private String number;
+	private String adress;
 	private String company;
 	
 	public Contact() {
 		
 	}
-	
-	public Contact(String firstname, String lastname, String number, String email, String adresse, String company) {
+
+	public Contact(String firstname, String lastname, String email, String number, String adress, String company) {
 		super();
 		this.firstname = firstname;
 		this.lastname = lastname;
-		this.number = number;
 		this.email = email;
-		this.adresse = adresse;
+		this.number = number;
+		this.adress = adress;
 		this.company = company;
 	}
 
@@ -39,14 +40,6 @@ public class Contact {
 		this.lastname = lastname;
 	}
 
-	public String getNumber() {
-		return number;
-	}
-
-	public void setNumber(String number) {
-		this.number = number;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -55,12 +48,20 @@ public class Contact {
 		this.email = email;
 	}
 
-	public String getAdresse() {
-		return adresse;
+	public String getNumber() {
+		return number;
 	}
 
-	public void setAdresse(String adresse) {
-		this.adresse = adresse;
+	public void setNumber(String number) {
+		this.number = number;
+	}
+
+	public String getAdress() {
+		return adress;
+	}
+
+	public void setAdress(String adress) {
+		this.adress = adress;
 	}
 
 	public String getCompany() {
@@ -70,7 +71,6 @@ public class Contact {
 	public void setCompany(String company) {
 		this.company = company;
 	}
-	
 	
 	
 
