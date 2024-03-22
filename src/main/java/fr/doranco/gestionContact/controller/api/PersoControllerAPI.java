@@ -68,7 +68,7 @@ public class PersoControllerAPI {
 	public ResponseEntity<Payload> createContact(@RequestBody Perso perso) {
 		Payload payload = new Payload();
 		perso = persoRepository.save(perso);
-		payload.setData(payload);
+		payload.setData(perso);
 		payload.setMessage("Personne ajoutée avec succès");
 				
 		return new ResponseEntity<>(payload, HttpStatus.CREATED);
