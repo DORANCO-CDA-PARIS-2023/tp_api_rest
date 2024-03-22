@@ -49,3 +49,5 @@ w
 G.idea/sonarlint/issuestore/8/7/873a5b3ca74dae35a54829a3fd0bcb8ee3cb6886,c\f\cf02f7cd4987f68f20917205dc14ba18bb37baac
 Å
 Q.idea/sonarlint/securityhotspotstore/3/0/30fde7d7d6d6ba7039e125f0bf2fde28753280be,8\1\8177fc881a89eff7db78e9ad21b9b7cc33591d9e
+l
+<.idea/libraries/springframework_boot_spring_maven_plugin.xml,7\0\70b29afbcd66c5763e3df5e0482e6aebc0b7c278

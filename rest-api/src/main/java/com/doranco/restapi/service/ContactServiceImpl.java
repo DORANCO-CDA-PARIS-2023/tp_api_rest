@@ -3,7 +3,7 @@ package com.doranco.restapi.service;
 
 import com.doranco.restapi.model.Contact;
 import com.doranco.restapi.repository.ContactRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class ContactServiceImpl implements ContactService {
 
-    @Autowired
+    @Resource
     private ContactRepository contactRepository;
 
     @Override
@@ -28,8 +28,9 @@ public class ContactServiceImpl implements ContactService {
 
 
     @Override
-    public Contact addContact(Contact contact) {
-        return contactRepository.save(contact);
+    public Contact addContact() {
+        contactRepository.save();
+        return null;
     }
 
     @Override

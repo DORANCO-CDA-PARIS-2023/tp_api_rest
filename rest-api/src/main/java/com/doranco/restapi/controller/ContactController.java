@@ -3,6 +3,7 @@ package com.doranco.restapi.controller;
 
 import com.doranco.restapi.model.Contact;
 import com.doranco.restapi.service.ContactService;
+import com.doranco.restapi.service.ContactServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +15,13 @@ import java.util.List;
 @RequestMapping("/api/contacts")
 public class ContactController {
 
+
+     ContactServiceImpl contactService=new ContactServiceImpl();
+
     @Autowired
-    private ContactService contactService;
+    public void setContactService(ContactServiceImpl contactService){
+        this.contactService= contactService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Contact>> getAllContacts() {
@@ -34,9 +40,9 @@ public class ContactController {
     }
 
     @PostMapping
-    public ResponseEntity<Contact> addContact(@RequestBody Contact contact) {
-        Contact createdContact = contactService.addContact(contact);
-        return new ResponseEntity<>(createdContact, HttpStatus.CREATED);
+    public void addContact(@RequestBody Contact contact) {
+        Contact createdContact = contactService.addContact();
+
     }
 
     @DeleteMapping("/{id}")

@@ -1,3 +1,7 @@
 
-X
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ
+d
+java:S1854,"BRemove this useless assignment to local variable "createdContact".(¯ìåıÿÿÿÿ8Ö…§®æ1
+U
+java:S1481,"3Remove this unused "createdContact" local variable.(¯ìåıÿÿÿÿ8Ø…§®æ1
+i
+java:S1128"GRemove this unused import 'com.doranco.restapi.service.ContactService'.(š‰öÄÿÿÿÿÿ8Ù…§®æ1
