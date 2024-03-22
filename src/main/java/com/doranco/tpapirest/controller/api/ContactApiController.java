@@ -65,4 +65,24 @@ public class ContactApiController {
         return new ResponseEntity<>(payload, HttpStatus.CREATED);
     }
 
+    @DeleteMapping("/contact/{id}")
+    public ResponseEntity<Payload> deleteById(@PathVariable(name = "id") Long id) {
+        Payload payload = new Payload();
+
+        Optional<Contact> contactById = contactRepository.findById(id);
+        if (contactById.isEmpty()) {
+            payload.setMessage(String.format(
+                    "There is no contact with id %s.",
+                    id
+            ));
+            return new ResponseEntity<>(payload, HttpStatus.NOT_FOUND);
+        }
+
+        payload.setMessage(String.format(
+                "Contact id %s deleted.",
+                id
+        ));
+        return new ResponseEntity<>(payload, HttpStatus.OK);
+    }
+
 }
