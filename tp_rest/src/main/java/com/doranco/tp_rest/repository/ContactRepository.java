@@ -10,8 +10,11 @@ import com.doranco.tp_rest.entity.Contact;
 
 public interface ContactRepository extends JpaRepository<Contact, Integer> {
 
+	@Query(value = "SELECT c FROM Contact c WHERE c.email LIKE :numberOrEmail OR c.number LIKE :numberOrEmail")
 	public Contact findByNumberOrEmail(String numberOrEmail);
 	
-	@Query(value = "SELECT c FROM Contact c WHERE c.firstname LIKE :name OR c.lastname LIKE :name")
+	@Query(value = "SELECT * FROM contact c WHERE c.firstname LIKE %:name% OR c.lastname LIKE %:name%", nativeQuery=true)
 	public List<Contact> findByName(@Param("name") String name);
+	
+//	public List<Contact> findByFirstnameContainingOrLastnameContaining(String name);
 }

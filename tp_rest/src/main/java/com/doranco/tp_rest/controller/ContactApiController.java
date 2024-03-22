@@ -44,7 +44,7 @@ public class ContactApiController {
         Payload payload = new Payload();
         try {
             var contact = contactRepository.findByNumberOrEmail(numberOrEmail);
-            payload.setMessage("Get one Contact");
+            payload.setMessage("Get one Contact by number or email");
             payload.setContent(contact);
             return new ResponseEntity<>(payload, HttpStatus.OK);
         } catch (NoSuchElementException e) {
@@ -73,8 +73,8 @@ public class ContactApiController {
     @GetMapping("/contact/name/{name}")
     public ResponseEntity<Payload> getByName(@PathVariable String name)
     {
-        var contacts = contactRepository.findAll();
-        Payload payload = new Payload("Get all contacts", contacts);
+        var contacts = contactRepository.findByName(name);
+        Payload payload = new Payload("Get contacts by name", contacts);
         if (contacts.isEmpty()) {
             return new ResponseEntity<>(payload, HttpStatus.NO_CONTENT);
         }
